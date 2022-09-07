@@ -5,7 +5,7 @@ import helmet from "helmet";
 
 const server = express();
 
-export const create = (config) => {
+export const create = (config,database) => {
 
     server.set('env', config.env);
     server.set('port', config.port);
@@ -19,6 +19,9 @@ export const create = (config) => {
     server.use(cors());
     server.use(helmet());
 
+    // connect database connection
+    database.createConnection(config.databaseString);
+    
     // defining an endpoint to return 
     server.get('/', (req, res) => {
         res.send("Hello this is blog api.");
