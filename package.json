@@ -1,0 +1,33 @@
+{
+  "name": "express-blog-api",
+  "version": "1.0.0",
+  "description": "apis for blog",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js --exec babel-node --",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "express-api",
+    "blog",
+    "blog-api",
+    "express-mongo"
+  ],
+  "author": "Rasith Upamal <rasithupamal@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "helmet": "^6.0.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.0",
+    "@babel/node": "^7.18.10",
+    "@babel/preset-env": "^7.19.0",
+    "nodemon": "^2.0.19"
+  }
+}
