@@ -5,7 +5,11 @@ import helmet from "helmet";
 
 const server = express();
 
-export const create = () => {
+export const create = (config) => {
+
+    server.set('env', config.env);
+    server.set('port', config.port);
+    server.set('hostname', config.hostname);
 
     // add middleware to parse the json
     server.use(bodyParser.json());
@@ -23,7 +27,10 @@ export const create = () => {
 
 
 export const start = () => {
-    server.listen(3001, function () {
-        console.log('listening on port 3001');
+
+    let hostname = server.get('hostname'),
+        port = server.get('port');
+    server.listen(port, function () {
+        console.log('Express server listening on - http://' + hostname + ':' + port);
     });
 };
